@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Tomawo>
+  <Timer>
+    <Current profile="default" project="default"/>
+    <Profiles>
+      <Profile name="default">
+        <Project name="default" session="25" sessionCont="4" break="5" longBreak="20"/>
+      </Profile>
+    </Profiles>
+  </Timer>
+  <Statistics>
+  </Statistics>
+</Tomawo>
