@@ -149,8 +149,7 @@ namespace Microsoft.Shell
             IntPtr argv = IntPtr.Zero;
             try
             {
-                int numArgs;
-                argv = _CommandLineToArgvW(cmdLine, out numArgs);
+                argv = _CommandLineToArgvW(cmdLine, out var numArgs);
 
                 if (argv == IntPtr.Zero)
                     throw new Win32Exception();
@@ -273,8 +272,11 @@ namespace Microsoft.Shell
         }
         private static void CreateRemoteService(string channelName)
         {
-            BinaryServerFormatterSinkProvider serverProvider = new BinaryServerFormatterSinkProvider();
-            serverProvider.TypeFilterLevel = TypeFilterLevel.Full;
+            BinaryServerFormatterSinkProvider serverProvider = new BinaryServerFormatterSinkProvider
+            {
+                TypeFilterLevel = TypeFilterLevel.Full
+            };
+
             IDictionary props = new Dictionary<string, string>();
 
             props["name"] = channelName;
@@ -325,8 +327,7 @@ namespace Microsoft.Shell
             {
                 if (Application.Current != null)
                 {
-                    Application.Current.Dispatcher.BeginInvoke(
-                        DispatcherPriority.Normal, new DispatcherOperationCallback(SingleInstance<TApplication>.ActivateFirstInstanceCallback), args);
+                    Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new DispatcherOperationCallback(SingleInstance<TApplication>.ActivateFirstInstanceCallback), args);
                 }
             }
             public override object InitializeLifetimeService()
@@ -338,4 +339,3 @@ namespace Microsoft.Shell
         #endregion
     }
 }
-

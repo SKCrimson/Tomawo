@@ -94,6 +94,38 @@ namespace Tomawo
             DragMove();
         }
 
+        private void StackSessions_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (StackSessions.Visibility != Visibility.Hidden) return;
+
+            StackSessions.Children.Clear();
+            int count = 0;
+
+            do
+            {
+                count++;
+
+                CountControl control = count <= _timeController.CountReady ?
+                    new CountControl(count.ToString(), true) : new CountControl(count.ToString(), false);
+
+                StackSessions.Children.Add(control);
+            } while (count < _timeController.Count);
+
+            _playStop.StackCount = Visibility.Visible;
+        }
+
+        private void CheckBoxStopwatch_Click(object sender, RoutedEventArgs e)
+        {
+            if (CheckBoxStopwatch.IsChecked != null && (bool)CheckBoxStopwatch.IsChecked)
+            {
+                _timeController.Stopwatch(true);
+            }
+            else
+            {
+                _timeController.Stopwatch(false);
+            }
+        }
+
         #endregion
 
         #region Timer Button Events
@@ -214,37 +246,5 @@ namespace Tomawo
         }
 
         #endregion
-
-        private void StackSessions_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            if (StackSessions.Visibility != Visibility.Hidden) return;
-
-            StackSessions.Children.Clear();
-            int count = 0;
-
-            do
-            {
-                count++;
-
-                CountControl control = count <= _timeController.CountReady ?
-                    new CountControl(count.ToString(), true) : new CountControl(count.ToString(), false);
-
-                StackSessions.Children.Add(control);
-            } while (count < _timeController.Count);
-
-            _playStop.StackCount = Visibility.Visible;
-        }
-
-        private void CheckBoxStopwatch_Click(object sender, RoutedEventArgs e)
-        {
-            if (CheckBoxStopwatch.IsChecked != null && (bool)CheckBoxStopwatch.IsChecked)
-            {
-                _timeController.Stopwatch(true);
-            }
-            else
-            {
-                _timeController.Stopwatch(false);
-            }
-        }
     }
 }

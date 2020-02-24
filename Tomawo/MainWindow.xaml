@@ -1,88 +1,99 @@
 ﻿<Window
+    x:Class="Tomawo.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-    mc:Ignorable="d" x:Class="Tomawo.MainWindow"
-    x:Name="Window" Initialized="Window_Initialized" Height="474" Width="478" ResizeMode="NoResize" WindowStyle="None"
-    AllowsTransparency="True" Background="Transparent" Topmost="True" Closing="Window_Closing" Foreground="{DynamicResource FontBrush}" FontFamily="Century Gothic">
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="Window"
+    Width="478"
+    Height="474"
+    AllowsTransparency="True"
+    Background="Transparent"
+    Closing="Window_Closing"
+    FontFamily="Century Gothic"
+    Foreground="{DynamicResource FontBrush}"
+    Initialized="Window_Initialized"
+    ResizeMode="NoResize"
+    Topmost="True"
+    WindowStyle="None"
+    mc:Ignorable="d">
     <Window.Resources>
         <Storyboard x:Key="OpenUsers">
-            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="GridUsers">
-                <EasingThicknessKeyFrame KeyTime="0" Value="0,-330,0,0"/>
-                <EasingThicknessKeyFrame KeyTime="0:0:0.5" Value="0"/>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="GridUsers" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                <EasingThicknessKeyFrame KeyTime="0" Value="0,-330,0,0" />
+                <EasingThicknessKeyFrame KeyTime="0:0:0.5" Value="0" />
             </ThicknessAnimationUsingKeyFrames>
-            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="GridUsers">
-                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Visible}"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="GridUsers" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Visible}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}" />
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="CloseUsers">
-            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="GridUsers">
-                <EasingThicknessKeyFrame KeyTime="0" Value="0,-330,0,0"/>
-                <EasingThicknessKeyFrame KeyTime="0:0:0.1" Value="0"/>
-                <EasingThicknessKeyFrame KeyTime="0:0:0.5" Value="0,330,0,0"/>
-                <EasingThicknessKeyFrame KeyTime="0:0:0.6" Value="0,330,0,0"/>
-                <EasingThicknessKeyFrame KeyTime="0:0:0.7" Value="0,-330,0,0"/>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="GridUsers" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                <EasingThicknessKeyFrame KeyTime="0" Value="0,-330,0,0" />
+                <EasingThicknessKeyFrame KeyTime="0:0:0.1" Value="0" />
+                <EasingThicknessKeyFrame KeyTime="0:0:0.5" Value="0,330,0,0" />
+                <EasingThicknessKeyFrame KeyTime="0:0:0.6" Value="0,330,0,0" />
+                <EasingThicknessKeyFrame KeyTime="0:0:0.7" Value="0,-330,0,0" />
             </ThicknessAnimationUsingKeyFrames>
-            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="GridUsers">
-                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Visible}"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Collapsed}"/>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="GridUsers" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Visible}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Collapsed}" />
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="OpenSettings">
-            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="GridSettings">
-                <EasingThicknessKeyFrame KeyTime="0" Value="0,-330,0,0"/>
-                <EasingThicknessKeyFrame KeyTime="0:0:0.5" Value="0"/>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="GridSettings" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                <EasingThicknessKeyFrame KeyTime="0" Value="0,-330,0,0" />
+                <EasingThicknessKeyFrame KeyTime="0:0:0.5" Value="0" />
             </ThicknessAnimationUsingKeyFrames>
-            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="GridSettings">
-                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Visible}"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="GridSettings" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Visible}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}" />
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="CloseSettings">
-            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="GridSettings">
-                <EasingThicknessKeyFrame KeyTime="0" Value="0,-330,0,0"/>
-                <EasingThicknessKeyFrame KeyTime="0:0:0.1" Value="0"/>
-                <EasingThicknessKeyFrame KeyTime="0:0:0.5" Value="0,330,0,0"/>
-                <EasingThicknessKeyFrame KeyTime="0:0:0.6" Value="0,330,0,0"/>
-                <EasingThicknessKeyFrame KeyTime="0:0:0.7" Value="0,-330,0,0"/>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="GridSettings" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                <EasingThicknessKeyFrame KeyTime="0" Value="0,-330,0,0" />
+                <EasingThicknessKeyFrame KeyTime="0:0:0.1" Value="0" />
+                <EasingThicknessKeyFrame KeyTime="0:0:0.5" Value="0,330,0,0" />
+                <EasingThicknessKeyFrame KeyTime="0:0:0.6" Value="0,330,0,0" />
+                <EasingThicknessKeyFrame KeyTime="0:0:0.7" Value="0,-330,0,0" />
             </ThicknessAnimationUsingKeyFrames>
-            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="GridSettings">
-                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Visible}"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Collapsed}"/>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="GridSettings" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Visible}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Collapsed}" />
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="OpenTasks">
-            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="GridTasks">
-                <EasingThicknessKeyFrame KeyTime="0" Value="0,-330,0,0"/>
-                <EasingThicknessKeyFrame KeyTime="0:0:0.5" Value="0"/>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="GridTasks" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                <EasingThicknessKeyFrame KeyTime="0" Value="0,-330,0,0" />
+                <EasingThicknessKeyFrame KeyTime="0:0:0.5" Value="0" />
             </ThicknessAnimationUsingKeyFrames>
-            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="GridTasks">
-                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Visible}"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="GridTasks" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Visible}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}" />
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="CloseTasks">
-            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="GridTasks">
-                <EasingThicknessKeyFrame KeyTime="0" Value="0,-330,0,0"/>
-                <EasingThicknessKeyFrame KeyTime="0:0:0.1" Value="0"/>
-                <EasingThicknessKeyFrame KeyTime="0:0:0.5" Value="0,330,0,0"/>
-                <EasingThicknessKeyFrame KeyTime="0:0:0.6" Value="0,330,0,0"/>
-                <EasingThicknessKeyFrame KeyTime="0:0:0.7" Value="0,-330,0,0"/>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="GridTasks" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                <EasingThicknessKeyFrame KeyTime="0" Value="0,-330,0,0" />
+                <EasingThicknessKeyFrame KeyTime="0:0:0.1" Value="0" />
+                <EasingThicknessKeyFrame KeyTime="0:0:0.5" Value="0,330,0,0" />
+                <EasingThicknessKeyFrame KeyTime="0:0:0.6" Value="0,330,0,0" />
+                <EasingThicknessKeyFrame KeyTime="0:0:0.7" Value="0,-330,0,0" />
             </ThicknessAnimationUsingKeyFrames>
-            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="GridTasks">
-                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Visible}"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Collapsed}"/>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="GridTasks" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Visible}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Collapsed}" />
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
@@ -92,198 +103,606 @@
             <RowDefinition Height="3" />
             <RowDefinition Height="403" />
         </Grid.RowDefinitions>
-        <Grid Name="GridTimer" Height="60" Width="460" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <Border Height="60" Width="460" Background="{Binding Path=TimerBrush}" BorderBrush="{DynamicResource GreyBrush}"
-                    BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top"
-                    MouseLeftButtonDown="Border_MouseLeftButtonDown">
+        <Grid
+            Name="GridTimer"
+            Width="460"
+            Height="60"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top">
+            <Border
+                Width="460"
+                Height="60"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="{Binding Path=TimerBrush}"
+                BorderBrush="{DynamicResource GreyBrush}"
+                BorderThickness="1"
+                MouseLeftButtonDown="Border_MouseLeftButtonDown">
                 <Border.Effect>
-                    <DropShadowEffect Opacity="0.55" Color="#FF363636" BlurRadius="8" ShadowDepth="6" />
+                    <DropShadowEffect
+                        BlurRadius="8"
+                        Opacity="0.55"
+                        ShadowDepth="6"
+                        Color="#FF363636" />
                 </Border.Effect>
                 <Grid>
-                    <MediaElement Name="ClockSound" LoadedBehavior="Manual" Visibility="Hidden" />
-                    <Grid HorizontalAlignment="Left" Width="46" Height="44" Background="{DynamicResource Tomato}"
-                          Margin="9,5,0,0" VerticalAlignment="Top" />
-                    <TextBlock VerticalAlignment="Top" Text="{Binding Path=Hours}"
-                               Margin="0,3,216,0" FontSize="42.667" Foreground="White" FontWeight="Bold"
-                               HorizontalAlignment="Right" />
-                    <TextBlock Text=":" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,209,0" 
-                               FontSize="42.667" Foreground="White" Visibility="{Binding Path=Colon}" FontWeight="Bold" />
-                    <TextBlock VerticalAlignment="Top" Text="{Binding Path=Minutes}"
-                               Margin="0,3,160,0" FontSize="42.667" Foreground="White" FontWeight="Bold"
-                               HorizontalAlignment="Right" />
-                    <TextBlock Text=":" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,147,0"
-                               FontSize="42.667" Foreground="White" FontWeight="Bold" />
-                    <TextBlock HorizontalAlignment="Right" VerticalAlignment="Top"
-                               Margin="0,3,98,0" FontSize="42.667" Foreground="White" FontWeight="Bold"
-                               Text="{Binding Path=Seconds}" />
-                    <Grid HorizontalAlignment="Right" Width="34" Background="{DynamicResource IconTimer}"
-                          Margin="0,12,56,0" Height="34" VerticalAlignment="Top" />
-                    <Grid Name="GridPlayStop" Margin="0,0,15,0" HorizontalAlignment="Right">
-                        <TextBlock Text="{Binding Path=State}" FontSize="14.667" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-353,7,0,0" />
-                        <StackPanel Name="StackSessions" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-353,30,0,0" 
-                               Visibility="{Binding Path=StackCount}" IsVisibleChanged="StackSessions_IsVisibleChanged" />
-                        <Button Height="26" Width="26" Template="{DynamicResource PlayStopButton}"
-                                Visibility="{Binding Path=PlayStop}" Click="BtnPlayStop_Click" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <MediaElement
+                        Name="ClockSound"
+                        LoadedBehavior="Manual"
+                        Visibility="Hidden" />
+                    <Grid
+                        Width="46"
+                        Height="44"
+                        Margin="9,5,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Background="{DynamicResource Tomato}" />
+                    <TextBlock
+                        Margin="0,4,216,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        FontSize="42.667"
+                        FontWeight="Bold"
+                        Foreground="White"
+                        Text="{Binding Path=Hours}" />
+                    <TextBlock
+                        Margin="0,-3,209,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        FontSize="42.667"
+                        FontWeight="Bold"
+                        Foreground="White"
+                        Text=":"
+                        Visibility="{Binding Path=Colon}" />
+                    <TextBlock
+                        Margin="0,4,160,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        FontSize="42.667"
+                        FontWeight="Bold"
+                        Foreground="White"
+                        Text="{Binding Path=Minutes}" />
+                    <TextBlock
+                        Margin="0,-3,147,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        FontSize="42.667"
+                        FontWeight="Bold"
+                        Foreground="White"
+                        Text=":" />
+                    <TextBlock
+                        Margin="0,4,98,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        FontSize="42.667"
+                        FontWeight="Bold"
+                        Foreground="White"
+                        Text="{Binding Path=Seconds}" />
+                    <Grid
+                        Width="34"
+                        Height="34"
+                        Margin="0,11,56,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Background="{DynamicResource IconTimer}" />
+                    <Grid
+                        Name="GridPlayStop"
+                        Margin="0,0,15,0"
+                        HorizontalAlignment="Right">
+                        <TextBlock
+                            Margin="-353,7,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            FontSize="14.667"
+                            Text="{Binding Path=State}" />
+                        <StackPanel
+                            Name="StackSessions"
+                            Margin="-353,30,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            IsVisibleChanged="StackSessions_IsVisibleChanged"
+                            Orientation="Horizontal"
+                            Visibility="{Binding Path=StackCount}" />
+                        <Button
+                            Width="26"
+                            Height="26"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Click="BtnPlayStop_Click"
+                            Template="{DynamicResource PlayStopButton}"
+                            Visibility="{Binding Path=PlayStop}">
                             <Grid>
-                                <Grid Name="IconPlay" Height="26" Width="26" Background="{DynamicResource IconPlay}" Visibility="{Binding Path=IconPlay}" />
-                                <Grid Height="26" Width="26" Background="{DynamicResource IconStop}" Visibility="{Binding Path=IconStop}" />
+                                <Grid
+                                    Name="IconPlay"
+                                    Width="26"
+                                    Height="26"
+                                    Background="{DynamicResource IconPlay}"
+                                    Visibility="{Binding Path=IconPlay}" />
+                                <Grid
+                                    Width="26"
+                                    Height="26"
+                                    Background="{DynamicResource IconStop}"
+                                    Visibility="{Binding Path=IconStop}" />
                             </Grid>
                         </Button>
-                        <Button Height="26" Width="26" Template="{DynamicResource PlayStopButton}" 
-                                Visibility="{Binding Path=Rewind}" Click="BtnRewind_Click" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Button
+                            Width="26"
+                            Height="26"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Click="BtnRewind_Click"
+                            Template="{DynamicResource PlayStopButton}"
+                            Visibility="{Binding Path=Rewind}">
                             <Grid>
-                                <Grid Height="26" Width="26" Background="{DynamicResource IconRewind}" />
+                                <Grid
+                                    Width="26"
+                                    Height="26"
+                                    Background="{DynamicResource IconRewind}" />
                             </Grid>
                         </Button>
                     </Grid>
                 </Grid>
             </Border>
         </Grid>
-        <Border Name="TimerLoginBorder" Grid.Row="0" Height="60" Width="460" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#4CC7C7C7" Visibility="Collapsed"/>
-        <Grid Name="GridAllSettings" Width="460" Height="384" Grid.Row="2" HorizontalAlignment="Left" Visibility="{Binding Path=AllSettings}" VerticalAlignment="Top">
-            <Border Height="384" Width="460" Background="{DynamicResource DarkBlueBrush}"
-                    BorderBrush="{DynamicResource GreyBrush}" BorderThickness="1" HorizontalAlignment="Left"
-                    VerticalAlignment="Top">
+        <Border
+            Name="TimerLoginBorder"
+            Grid.Row="0"
+            Width="460"
+            Height="60"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="#4CC7C7C7"
+            Visibility="Collapsed" />
+        <Grid
+            Name="GridAllSettings"
+            Grid.Row="2"
+            Width="460"
+            Height="384"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Visibility="{Binding Path=AllSettings}">
+            <Border
+                Width="460"
+                Height="384"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="{DynamicResource DarkBlueBrush}"
+                BorderBrush="{DynamicResource GreyBrush}"
+                BorderThickness="1">
                 <Border.Effect>
-                    <DropShadowEffect Opacity="0.55" Color="#FF363636" BlurRadius="8" ShadowDepth="6" />
+                    <DropShadowEffect
+                        BlurRadius="8"
+                        Opacity="0.55"
+                        ShadowDepth="6"
+                        Color="#FF363636" />
                 </Border.Effect>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="46" />
                         <RowDefinition Height="406*" />
                     </Grid.RowDefinitions>
-                    <Button Name="ButtonSettings" Margin="8,8,0,0" Template="{DynamicResource MainButton}" Width="38" Height="38"
-                            HorizontalAlignment="Left" VerticalAlignment="Top" Click="ButtonSettings_Click">
-                        <Grid Height="30" Width="30" Background="{DynamicResource IconSetting}" />
+                    <Button
+                        Name="ButtonSettings"
+                        Width="38"
+                        Height="38"
+                        Margin="8,8,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Click="ButtonSettings_Click"
+                        Template="{DynamicResource MainButton}">
+                        <Grid
+                            Width="30"
+                            Height="30"
+                            Background="{DynamicResource IconSetting}" />
                     </Button>
-                    <Button Name="ButtonTasks" Margin="56,8,0,0" Template="{DynamicResource MainButton}" Width="38" Height="38"
-                            HorizontalAlignment="Left" VerticalAlignment="Top" Click="ButtonTasks_Click">
-                        <Grid Height="30" Width="30" Background="{DynamicResource IconTasks}" />
+                    <Button
+                        Name="ButtonTasks"
+                        Width="38"
+                        Height="38"
+                        Margin="56,8,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Click="ButtonTasks_Click"
+                        Template="{DynamicResource MainButton}">
+                        <Grid
+                            Width="30"
+                            Height="30"
+                            Background="{DynamicResource IconTasks}" />
                     </Button>
-                    <Button Name="ButtonUsers" Margin="97,8,0,0" Template="{DynamicResource MainButton}" Width="38" Height="38"
-                            HorizontalAlignment="Left" VerticalAlignment="Top" Click="ButtonUsers_Click">
-                        <Grid Height="30" Width="30" Background="{DynamicResource IconUsers}" />
+                    <Button
+                        Name="ButtonUsers"
+                        Width="38"
+                        Height="38"
+                        Margin="97,8,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Click="ButtonUsers_Click"
+                        Template="{DynamicResource MainButton}">
+                        <Grid
+                            Width="30"
+                            Height="30"
+                            Background="{DynamicResource IconUsers}" />
                     </Button>
-                    <Button Margin="138,8,0,0" Template="{DynamicResource MainButton}" Width="38" Height="38"
-                            HorizontalAlignment="Left" VerticalAlignment="Top">
-                        <Grid Height="30" Width="30" Background="{DynamicResource IconStatistic}" />
+                    <Button
+                        Width="38"
+                        Height="38"
+                        Margin="138,8,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Template="{DynamicResource MainButton}">
+                        <Grid
+                            Width="30"
+                            Height="30"
+                            Background="{DynamicResource IconStatistic}" />
                     </Button>
-                    <Button Margin="0,13,40,0" Template="{DynamicResource MainButton}" Width="28" Height="28"
-                            HorizontalAlignment="Right" VerticalAlignment="Top">
-                        <Grid Height="22" Width="22" Background="{DynamicResource IconQuestion}" />
+                    <Button
+                        Width="28"
+                        Height="28"
+                        Margin="0,13,40,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Template="{DynamicResource MainButton}">
+                        <Grid
+                            Width="22"
+                            Height="22"
+                            Background="{DynamicResource IconQuestion}" />
                     </Button>
-                    <Button Name="BtnClose" Margin="0,13,8,0" Template="{DynamicResource MainButton}" Width="28"
-                            Height="28" HorizontalAlignment="Right" VerticalAlignment="Top" Click="BtnClose_Click">
-                        <Grid Height="22" Width="22" Background="{DynamicResource IconClose}" />
+                    <Button
+                        Name="BtnClose"
+                        Width="28"
+                        Height="28"
+                        Margin="0,13,8,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Click="BtnClose_Click"
+                        Template="{DynamicResource MainButton}">
+                        <Grid
+                            Width="22"
+                            Height="22"
+                            Background="{DynamicResource IconClose}" />
                     </Button>
-                    <Border Margin="8" Grid.Row="1" Style="{DynamicResource BorderStyle}" BorderBrush="#FF1A297E">
+                    <Border
+                        Grid.Row="1"
+                        Margin="8"
+                        BorderBrush="#FF1A297E"
+                        Style="{DynamicResource BorderStyle}">
                         <Grid ClipToBounds="True">
                             <Grid Name="GridSettings">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="101*" />
                                     <ColumnDefinition Width="134*" />
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Text="Preferences" VerticalAlignment="Top" Margin="0,5,0,0" FontSize="24" 
-                                       FontWeight="Bold" Width="142" Grid.RowSpan="2" Grid.ColumnSpan="2" TextAlignment="Center" />
-                                <TextBlock Text="Session" HorizontalAlignment="Left" VerticalAlignment="Top"
-                                       Margin="12,38,0,0" FontSize="17.333" FontWeight="Bold" Width="76" />
-                                <TextBlock Text="Length (minutes)" HorizontalAlignment="Left" VerticalAlignment="Top"
-                                       Margin="12,62,0,0" FontSize="13.333" Width="115" />
-                                <TextBlock Margin="10,59,0,0" Text="{Binding ElementName=SliderSessionLength, Path=Value}"
-                                       Grid.Column="1" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"
-                                       Width="31" FontSize="17.333" TextAlignment="Center" FontWeight="Bold" />
-                                <Slider Name="SliderSessionLength" VerticalAlignment="Top" Value="{Binding Path=Time}"
-                                       Grid.Column="1" Margin="52,59,11,0" Maximum="90" IsSnapToTickEnabled="True" Minimum="1"
-                                       Style="{DynamicResource SliderStyle}" PreviewMouseUp="SliderSessionLength_PreviewMouseUp"/>
-                                <TextBlock Text="Number of sessions" HorizontalAlignment="Left" VerticalAlignment="Top"
-                                       Margin="12,89,0,0" FontSize="13.333" Width="127" />
-                                <TextBlock Margin="10,86,0,0" Text="{Binding ElementName=SliderSessionCount, Path=Value}"
-                                       Grid.Column="1" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"
-                                       Width="31" FontSize="17.333" TextAlignment="Center" FontWeight="Bold" />
-                                <Slider Name="SliderSessionCount" VerticalAlignment="Top" Value="{Binding Path=Count}"
-                                       Grid.Column="1" Margin="52,86,11,0" Maximum="8" IsSnapToTickEnabled="True" Minimum="1"
-                                       Style="{DynamicResource SliderStyle}" PreviewMouseUp="SliderSessionCount_PreviewMouseUp" />
-                                <TextBlock Text="Break" HorizontalAlignment="Left" VerticalAlignment="Top"
-                                       Margin="12,114,0,0" FontSize="17.333" FontWeight="Bold" Width="76" />
-                                <TextBlock Text="Length (minutes)" HorizontalAlignment="Left" VerticalAlignment="Top"
-                                       Margin="12,138,0,0" FontSize="13.333" Width="115" />
-                                <TextBlock Margin="10,135,0,0" Text="{Binding ElementName=SliderBreakLength, Path=Value}"
-                                       Grid.Column="1" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"
-                                       Width="31" FontSize="17.333" TextAlignment="Center" FontWeight="Bold" />
-                                <Slider Name="SliderBreakLength" VerticalAlignment="Top" Value="{Binding Path=BreakTime}"
-                                       Grid.Column="1" Style="{DynamicResource SliderStyle}" Margin="51,135,11,0" Maximum="20"
-                                       IsSnapToTickEnabled="True" Minimum="1" PreviewMouseUp="SliderBreakLength_PreviewMouseUp" />
-                                <TextBlock Text="Long Break" HorizontalAlignment="Left" VerticalAlignment="Top"
-                                       Margin="12,163,0,0" FontSize="17.333" FontWeight="Bold" Width="100" />
-                                <TextBlock Text="Length (minutes)" HorizontalAlignment="Left" VerticalAlignment="Top"
-                                       Margin="12,187,0,0" FontSize="13.333" Width="115" />
-                                <TextBlock Margin="10,184,0,0" Text="{Binding ElementName=SliderLongBreakLength, Path=Value}"
-                                       Grid.Column="1" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"
-                                       Width="31" FontSize="17.333" TextAlignment="Center" FontWeight="Bold" />
-                                <Slider Name="SliderLongBreakLength" VerticalAlignment="Top" Value="{Binding Path=LongBreak}"
-                                       Grid.Column="1" Margin="51,184,11,0" Maximum="60" Style="{DynamicResource SliderStyle}"
-                                       IsSnapToTickEnabled="True" Minimum="1" PreviewMouseUp="SliderLongBreakLength_PreviewMouseUp" />
-                                <CheckBox Name="CheckBoxStopwatch" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,225,0,0"
-                                       IsChecked="{Binding Path=CheckStopwatch}" Click="CheckBoxStopwatch_Click" />
-                                <TextBlock Text="Stopwatch" HorizontalAlignment="Left" VerticalAlignment="Top"
-                                       Margin="36,220,0,0" FontSize="17.333" FontWeight="Bold" Width="100" />
-                                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top"
-                                       Margin="12,250,0,0" FontSize="17.333" FontWeight="Bold" Width="100" Text="Test" Visibility="Collapsed" />
-                                <CheckBox Name="CheckBoxQuiet" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,290,0,0" 
-                                       IsChecked="{Binding Path=Quiet}" />
-                                <TextBlock Text="Quiet sound" HorizontalAlignment="Left" VerticalAlignment="Top"
-                                       Margin="36,285,0,0" FontSize="17.333" FontWeight="Bold" Width="100" />
+                                <TextBlock
+                                    Grid.RowSpan="2"
+                                    Grid.ColumnSpan="2"
+                                    Width="142"
+                                    Margin="0,5,0,0"
+                                    VerticalAlignment="Top"
+                                    FontSize="24"
+                                    FontWeight="Bold"
+                                    Text="Preferences"
+                                    TextAlignment="Center" />
+                                <TextBlock
+                                    Width="76"
+                                    Margin="12,38,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    FontSize="17.333"
+                                    FontWeight="Bold"
+                                    Text="Session" />
+                                <TextBlock
+                                    Width="115"
+                                    Margin="12,62,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    FontSize="13.333"
+                                    Text="Length (minutes)" />
+                                <TextBlock
+                                    Grid.Column="1"
+                                    Width="31"
+                                    Height="20"
+                                    Margin="10,59,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    FontSize="17.333"
+                                    FontWeight="Bold"
+                                    Text="{Binding ElementName=SliderSessionLength, Path=Value}"
+                                    TextAlignment="Center" />
+                                <Slider
+                                    Name="SliderSessionLength"
+                                    Grid.Column="1"
+                                    Margin="52,59,11,0"
+                                    VerticalAlignment="Top"
+                                    IsSnapToTickEnabled="True"
+                                    Maximum="90"
+                                    Minimum="1"
+                                    PreviewMouseUp="SliderSessionLength_PreviewMouseUp"
+                                    Style="{DynamicResource SliderStyle}"
+                                    Value="{Binding Path=Time}" />
+                                <TextBlock
+                                    Width="127"
+                                    Margin="12,89,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    FontSize="13.333"
+                                    Text="Number of sessions" />
+                                <TextBlock
+                                    Grid.Column="1"
+                                    Width="31"
+                                    Height="20"
+                                    Margin="10,86,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    FontSize="17.333"
+                                    FontWeight="Bold"
+                                    Text="{Binding ElementName=SliderSessionCount, Path=Value}"
+                                    TextAlignment="Center" />
+                                <Slider
+                                    Name="SliderSessionCount"
+                                    Grid.Column="1"
+                                    Margin="52,86,11,0"
+                                    VerticalAlignment="Top"
+                                    IsSnapToTickEnabled="True"
+                                    Maximum="8"
+                                    Minimum="1"
+                                    PreviewMouseUp="SliderSessionCount_PreviewMouseUp"
+                                    Style="{DynamicResource SliderStyle}"
+                                    Value="{Binding Path=Count}" />
+                                <TextBlock
+                                    Width="76"
+                                    Margin="12,114,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    FontSize="17.333"
+                                    FontWeight="Bold"
+                                    Text="Break" />
+                                <TextBlock
+                                    Width="115"
+                                    Margin="12,138,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    FontSize="13.333"
+                                    Text="Length (minutes)" />
+                                <TextBlock
+                                    Grid.Column="1"
+                                    Width="31"
+                                    Height="20"
+                                    Margin="10,135,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    FontSize="17.333"
+                                    FontWeight="Bold"
+                                    Text="{Binding ElementName=SliderBreakLength, Path=Value}"
+                                    TextAlignment="Center" />
+                                <Slider
+                                    Name="SliderBreakLength"
+                                    Grid.Column="1"
+                                    Margin="51,135,11,0"
+                                    VerticalAlignment="Top"
+                                    IsSnapToTickEnabled="True"
+                                    Maximum="20"
+                                    Minimum="1"
+                                    PreviewMouseUp="SliderBreakLength_PreviewMouseUp"
+                                    Style="{DynamicResource SliderStyle}"
+                                    Value="{Binding Path=BreakTime}" />
+                                <TextBlock
+                                    Width="100"
+                                    Margin="12,163,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    FontSize="17.333"
+                                    FontWeight="Bold"
+                                    Text="Long Break" />
+                                <TextBlock
+                                    Width="115"
+                                    Margin="12,187,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    FontSize="13.333"
+                                    Text="Length (minutes)" />
+                                <TextBlock
+                                    Grid.Column="1"
+                                    Width="31"
+                                    Height="20"
+                                    Margin="10,184,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    FontSize="17.333"
+                                    FontWeight="Bold"
+                                    Text="{Binding ElementName=SliderLongBreakLength, Path=Value}"
+                                    TextAlignment="Center" />
+                                <Slider
+                                    Name="SliderLongBreakLength"
+                                    Grid.Column="1"
+                                    Margin="51,184,11,0"
+                                    VerticalAlignment="Top"
+                                    IsSnapToTickEnabled="True"
+                                    Maximum="60"
+                                    Minimum="1"
+                                    PreviewMouseUp="SliderLongBreakLength_PreviewMouseUp"
+                                    Style="{DynamicResource SliderStyle}"
+                                    Value="{Binding Path=LongBreak}" />
+                                <CheckBox
+                                    Name="CheckBoxStopwatch"
+                                    Margin="12,224,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    Click="CheckBoxStopwatch_Click"
+                                    IsChecked="{Binding Path=CheckStopwatch}" />
+                                <TextBlock
+                                    Width="100"
+                                    Margin="36,221,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    FontSize="17.333"
+                                    FontWeight="Bold"
+                                    Text="Stopwatch" />
+                                <TextBlock
+                                    Width="100"
+                                    Margin="12,250,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    FontSize="17.333"
+                                    FontWeight="Bold"
+                                    Text="Test"
+                                    Visibility="Collapsed" />
+                                <CheckBox
+                                    Name="CheckBoxQuiet"
+                                    Margin="12,289,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    IsChecked="{Binding Path=Quiet}" />
+                                <TextBlock
+                                    Width="100"
+                                    Margin="36,286,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    FontSize="17.333"
+                                    FontWeight="Bold"
+                                    Text="Quiet sound" />
                             </Grid>
-                            <Grid Name="GridUsers" Margin="0,-390,0,0" Visibility="Collapsed">
+                            <Grid
+                                Name="GridUsers"
+                                Margin="0,-390,0,0"
+                                Visibility="Collapsed">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="101*" />
                                     <ColumnDefinition Width="134*" />
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Text="Users" VerticalAlignment="Top" Margin="0,5,0,0" FontSize="24" FontWeight="Bold" 
-                                       Width="142" Grid.RowSpan="2" Grid.ColumnSpan="2" TextAlignment="Center" />
+                                <TextBlock
+                                    Grid.RowSpan="2"
+                                    Grid.ColumnSpan="2"
+                                    Width="142"
+                                    Margin="0,5,0,0"
+                                    VerticalAlignment="Top"
+                                    FontSize="24"
+                                    FontWeight="Bold"
+                                    Text="Users"
+                                    TextAlignment="Center" />
                             </Grid>
-                            <Grid Name="GridTasks" Margin="0,-390,0,0" Visibility="Collapsed">
+                            <Grid
+                                Name="GridTasks"
+                                Margin="0,-390,0,0"
+                                Visibility="Collapsed">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="101*" />
                                     <ColumnDefinition Width="134*" />
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Text="Tasks" VerticalAlignment="Top" Margin="0,5,0,0" FontSize="24" FontWeight="Bold"
-                                       Width="142" Grid.RowSpan="2" Grid.ColumnSpan="2" TextAlignment="Center" />
+                                <TextBlock
+                                    Grid.RowSpan="2"
+                                    Grid.ColumnSpan="2"
+                                    Width="142"
+                                    Margin="0,5,0,0"
+                                    VerticalAlignment="Top"
+                                    FontSize="24"
+                                    FontWeight="Bold"
+                                    Text="Tasks"
+                                    TextAlignment="Center" />
                             </Grid>
                         </Grid>
                     </Border>
                 </Grid>
             </Border>
         </Grid>
-        <Border Name="MainLoginBorder" Grid.Row="2" Height="384" Width="460" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#4CC7C7C7" Visibility="Collapsed">
+        <Border
+            Name="MainLoginBorder"
+            Grid.Row="2"
+            Width="460"
+            Height="384"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="#4CC7C7C7"
+            Visibility="Collapsed">
             <Grid>
-                <Border Width="340" Height="152" HorizontalAlignment="Center" VerticalAlignment="Top" BorderThickness="1" 
-                        Background="{DynamicResource DarkBlueBrush}" BorderBrush="{DynamicResource GreyBrush}" Margin="60,96,60,0" >
+                <Border
+                    Width="340"
+                    Height="152"
+                    Margin="60,96,60,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Background="{DynamicResource DarkBlueBrush}"
+                    BorderBrush="{DynamicResource GreyBrush}"
+                    BorderThickness="1">
                     <Border.Effect>
-                        <DropShadowEffect Opacity="0.55" BlurRadius="10" ShadowDepth="8"/>
+                        <DropShadowEffect
+                            BlurRadius="10"
+                            Opacity="0.55"
+                            ShadowDepth="8" />
                     </Border.Effect>
                     <StackPanel Margin="10">
                         <Grid>
-                            <Grid HorizontalAlignment="Left" Width="34" Background="{DynamicResource IconKey}"
-                               Margin="0" Height="34" VerticalAlignment="Top" />
-                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18.667" Text="LOGIN" Margin="55,0,0,0" FontWeight="Bold" />
+                            <Grid
+                                Width="34"
+                                Height="34"
+                                Margin="0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Background="{DynamicResource IconKey}" />
+                            <TextBlock
+                                Margin="55,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontSize="18.667"
+                                FontWeight="Bold"
+                                Text="LOGIN" />
                         </Grid>
                         <Grid Height="30" Margin="0,3,0,0">
-                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14.667" Text="User name:" />
-                            <TextBox Height="22" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Right" Width="210" FontSize="13.333"/>
+                            <TextBlock
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontSize="14.667"
+                                Text="User name:" />
+                            <TextBox
+                                Width="210"
+                                Height="22"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                FontSize="13.333"
+                                TextWrapping="Wrap" />
                         </Grid>
                         <Grid Height="30" Margin="0">
-                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14.667" Text="Password:" />
-                            <PasswordBox Height="22" VerticalAlignment="Center" HorizontalAlignment="Right" Width="210" FontSize="13.333"/>
+                            <TextBlock
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontSize="14.667"
+                                Text="Password:" />
+                            <PasswordBox
+                                Width="210"
+                                Height="22"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                FontSize="13.333" />
                         </Grid>
-                        <Grid Height="30" Margin="0,6,0,0" VerticalAlignment="Bottom">
-                            <Button x:Name="LoginButton" Height="24" Width="80" HorizontalAlignment="Right" Margin="0,0,90,0" VerticalAlignment="Center"
-                                    Template="{DynamicResource MainButton}" Click="LoginButton_Click" >
-                                <TextBlock Text="Sign in" FontSize="14.667" Foreground="{DynamicResource FontBrush}" />
+                        <Grid
+                            Height="30"
+                            Margin="0,6,0,0"
+                            VerticalAlignment="Bottom">
+                            <Button
+                                x:Name="LoginButton"
+                                Width="80"
+                                Height="24"
+                                Margin="0,0,90,0"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Click="LoginButton_Click"
+                                Template="{DynamicResource MainButton}">
+                                <TextBlock
+                                    FontSize="14.667"
+                                    Foreground="{DynamicResource FontBrush}"
+                                    Text="Sign in" />
                             </Button>
-                            <Button x:Name="LoginCancelButton" Height="24" Width="80" HorizontalAlignment="Right" VerticalAlignment="Center" 
-                                Template="{DynamicResource MainButton}" Click="LoginCancelButton_Click" >
-                                <TextBlock Text="Close" FontSize="14.667" Foreground="{DynamicResource FontBrush}" />
+                            <Button
+                                x:Name="LoginCancelButton"
+                                Width="80"
+                                Height="24"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Click="LoginCancelButton_Click"
+                                Template="{DynamicResource MainButton}">
+                                <TextBlock
+                                    FontSize="14.667"
+                                    Foreground="{DynamicResource FontBrush}"
+                                    Text="Close" />
                             </Button>
                         </Grid>
                     </StackPanel>

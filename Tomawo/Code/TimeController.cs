@@ -65,7 +65,7 @@ namespace Tomawo.Code
 
         public Brush TimerBrush
         {
-            get { return _timerBrush; }
+            get => _timerBrush;
             set
             {
                 _timerBrush = value;
@@ -74,7 +74,7 @@ namespace Tomawo.Code
         }
         public Visibility AllSettings
         {
-            get { return _allSettings; }
+            get => _allSettings;
             set
             {
                 _allSettings = value;
@@ -83,7 +83,7 @@ namespace Tomawo.Code
         }
         public double Count
         {
-            get { return _count; }
+            get => _count;
             set
             {
                 _count = value;
@@ -93,7 +93,7 @@ namespace Tomawo.Code
         public double CountReady { get; set; }
         public bool Quiet
         {
-            get { return _quiet; }
+            get => _quiet;
             set
             {
                 _quiet = value;
@@ -103,7 +103,7 @@ namespace Tomawo.Code
         }
         public bool CheckStopwatch
         {
-            get { return _checkStopwatch; }
+            get => _checkStopwatch;
             set
             {
                 _checkStopwatch = value;
@@ -113,10 +113,7 @@ namespace Tomawo.Code
 
         public double Time
         {
-            get
-            {
-                return _time;
-            }
+            get => _time;
             set
             {
                 _time = value;
@@ -127,10 +124,7 @@ namespace Tomawo.Code
         }
         public double BreakTime
         {
-            get
-            {
-                return _breakTime;
-            }
+            get => _breakTime;
             set
             {
                 _breakTime = value;
@@ -141,7 +135,7 @@ namespace Tomawo.Code
         }
         public double LongBreak
         {
-            get { return _longBreak; }
+            get => _longBreak;
             set
             {
                 _longBreak = value;
@@ -152,7 +146,7 @@ namespace Tomawo.Code
         }
         public string Hours
         {
-            get { return _hours; }
+            get => _hours;
             set
             {
                 _hours = value;
@@ -161,7 +155,7 @@ namespace Tomawo.Code
         }
         public Visibility Colon
         {
-            get { return _colon; }
+            get => _colon;
             set
             {
                 _colon = value;
@@ -170,7 +164,7 @@ namespace Tomawo.Code
         }
         public string Minutes
         {
-            get { return _minutesStr; }
+            get => _minutesStr;
             set
             {
                 _minutesStr = value;
@@ -179,7 +173,7 @@ namespace Tomawo.Code
         }
         public string Seconds
         {
-            get { return _secondsStr; }
+            get => _secondsStr;
             set
             {
                 _secondsStr = value;

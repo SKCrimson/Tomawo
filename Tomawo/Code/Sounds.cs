@@ -83,11 +83,11 @@ namespace Tomawo.Code
             _media.Play();
 
             _seconds = 3;
-            _timer.Tick += timer_TickEnding;
+            _timer.Tick += Timer_TickEnding;
             _timer.Start();
 
         }
-        private void timer_TickEnding(object sender, EventArgs e)
+        private void Timer_TickEnding(object sender, EventArgs e)
         {
             if (_seconds != 0)
             {
@@ -98,7 +98,7 @@ namespace Tomawo.Code
             {
                 _media.Stop();
                 _media.Close();
-                _timer.Tick -= timer_TickEnding;
+                _timer.Tick -= Timer_TickEnding;
             }
         }
 
@@ -109,11 +109,11 @@ namespace Tomawo.Code
             _media.Play();
 
             _seconds = 2;
-            _timer.Tick += timer_TickEnd;
+            _timer.Tick += Timer_TickEnd;
             _timer.Start();
 
         }
-        private void timer_TickEnd(object sender, EventArgs e)
+        private void Timer_TickEnd(object sender, EventArgs e)
         {
             if (_seconds != 0)
             {
@@ -123,7 +123,7 @@ namespace Tomawo.Code
             {
                 _media.Stop();
                 _media.Close();
-                _timer.Tick -= timer_TickEnd;
+                _timer.Tick -= Timer_TickEnd;
             }
         }
 

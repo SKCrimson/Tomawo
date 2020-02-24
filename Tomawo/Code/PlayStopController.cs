@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Windows;
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable UnusedMember.Global
@@ -44,7 +42,7 @@ namespace Tomawo.Code
 
         public string State
         {
-            get { return _state; }
+            get => _state;
             set
             {
                 _state = value;
@@ -53,7 +51,7 @@ namespace Tomawo.Code
         }
         public Visibility StackCount
         {
-            get { return _stackCount; }
+            get => _stackCount;
             set
             {
                 _stackCount = value;
@@ -62,7 +60,7 @@ namespace Tomawo.Code
         }
         public Visibility IconPlay
         {
-            get { return _iconPlay; }
+            get => _iconPlay;
             set
             {
                 _iconPlay = value;
@@ -71,7 +69,7 @@ namespace Tomawo.Code
         }
         public Visibility IconStop
         {
-            get { return _iconStop; }
+            get => _iconStop;
             set
             {
                 _iconStop = value;
@@ -80,7 +78,7 @@ namespace Tomawo.Code
         }
         public Visibility PlayStop
         {
-            get { return _playStop; }
+            get => _playStop;
             set
             {
                 _playStop = value;
@@ -89,7 +87,7 @@ namespace Tomawo.Code
         }
         public Visibility Rewind
         {
-            get { return _rewind; }
+            get => _rewind;
             set
             {
                 _rewind = value;
@@ -105,8 +103,7 @@ namespace Tomawo.Code
         {
             PropertyChangedEventHandler handler = PropertyChanged;
 
-            if (handler != null)
-                handler(this, new PropertyChangedEventArgs(info));
+            handler?.Invoke(this, new PropertyChangedEventArgs(info));
         }
 
         internal void SessionStart()

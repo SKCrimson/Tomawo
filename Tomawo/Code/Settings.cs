@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 // ReSharper disable PossibleNullReferenceException
@@ -34,8 +33,8 @@ namespace Tomawo.Code
         public double LongBreak { get; set; }
         public bool Quiet
         {
-            get { return _quiet != "0"; }
-            set { _quiet = value ? "1" : "0"; }
+            get => _quiet != "0";
+            set => _quiet = value ? "1" : "0";
         }
 
         #endregion
