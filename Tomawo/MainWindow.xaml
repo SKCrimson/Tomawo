@@ -6,7 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="Window"
     Width="478"
-    Height="474"
+    Height="444"
     AllowsTransparency="True"
     Background="Transparent"
     Closing="Window_Closing"
@@ -138,7 +138,7 @@
                         VerticalAlignment="Top"
                         Background="{DynamicResource Tomato}" />
                     <TextBlock
-                        Margin="0,4,216,0"
+                        Margin="0,-1,216,0"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center"
                         FontSize="42.667"
@@ -146,7 +146,7 @@
                         Foreground="White"
                         Text="{Binding Path=Hours}" />
                     <TextBlock
-                        Margin="0,-3,209,0"
+                        Margin="0,-8,209,0"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center"
                         FontSize="42.667"
@@ -155,7 +155,7 @@
                         Text=":"
                         Visibility="{Binding Path=Colon}" />
                     <TextBlock
-                        Margin="0,4,160,0"
+                        Margin="0,-1,160,0"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center"
                         FontSize="42.667"
@@ -163,7 +163,7 @@
                         Foreground="White"
                         Text="{Binding Path=Minutes}" />
                     <TextBlock
-                        Margin="0,-3,147,0"
+                        Margin="0,-8,147,0"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center"
                         FontSize="42.667"
@@ -171,7 +171,7 @@
                         Foreground="White"
                         Text=":" />
                     <TextBlock
-                        Margin="0,4,98,0"
+                        Margin="0,-1,98,0"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center"
                         FontSize="42.667"
@@ -194,6 +194,7 @@
                             HorizontalAlignment="Left"
                             VerticalAlignment="Top"
                             FontSize="14.667"
+                            Foreground="{DynamicResource LightFontBrush}"
                             Text="{Binding Path=State}" />
                         <StackPanel
                             Name="StackSessions"
@@ -257,13 +258,13 @@
             Name="GridAllSettings"
             Grid.Row="2"
             Width="460"
-            Height="384"
+            Height="354"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Visibility="{Binding Path=AllSettings}">
             <Border
                 Width="460"
-                Height="384"
+                Height="354"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Background="{DynamicResource DarkBlueBrush}"
@@ -537,24 +538,15 @@
                                     FontSize="17.333"
                                     FontWeight="Bold"
                                     Text="Stopwatch" />
-                                <TextBlock
-                                    Width="100"
-                                    Margin="12,250,0,0"
-                                    HorizontalAlignment="Left"
-                                    VerticalAlignment="Top"
-                                    FontSize="17.333"
-                                    FontWeight="Bold"
-                                    Text="Test"
-                                    Visibility="Collapsed" />
                                 <CheckBox
                                     Name="CheckBoxQuiet"
-                                    Margin="12,289,0,0"
+                                    Margin="12,259,0,0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Top"
                                     IsChecked="{Binding Path=Quiet}" />
                                 <TextBlock
                                     Width="100"
-                                    Margin="36,286,0,0"
+                                    Margin="36,256,0,0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Top"
                                     FontSize="17.333"

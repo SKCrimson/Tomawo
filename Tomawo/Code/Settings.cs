@@ -41,38 +41,36 @@ namespace Tomawo.Code
 
         #region Methods
 
-        private XDocument CurrentStateSession()
+        private static XDocument CurrentStateSession()
         {
             XDocument document = XDocument.Load("Xml/Settings.xml");
-            IEnumerable<XElement> elements = document.Element("Timer").Descendants();
+            //IEnumerable<XElement> elements = document.Element("Tomawo")
+            //    .Element("Timer")
+            //    .Elements();
 
-            foreach (XAttribute attribute in elements.Where(element => element.Name == "Current").SelectMany(element => element.Attributes()))
-            {
-                if (attribute.Name == "profile")
-                {
-                    _profile = attribute.Value;
-                }
-                else
-                {
-                    _project = attribute.Value;
-                }
-            }
+            //foreach (XAttribute attribute in elements
+            //             .Where(element => element.Name == "Current")
+            //             .SelectMany(element => element.Attributes()))
+            //{
+            //    if (attribute.Name == "profile")
+            //    {
+            //        _profile = attribute.Value;
+            //    }
+            //    else
+            //    {
+            //        _project = attribute.Value;
+            //    }
+            //}
 
             return document;
         }
         internal void Session()
         {
             XDocument document = CurrentStateSession();
-            IEnumerable<XElement> elements = document.Element("Timer").Descendants();
+            XElement element = document.Element("Tomawo")
+                .Element("Timer");
 
-            foreach (XAttribute attribute in from element in elements
-                                             where element.Name == "Profiles"
-                                             from profileElement in element.Elements()
-                                             where profileElement.FirstAttribute.Value == _profile
-                                             from projectElement in profileElement.Elements()
-                                             where projectElement.FirstAttribute.Value == _project
-                                             from attribute in projectElement.Attributes()
-                                             select attribute)
+            foreach (XAttribute attribute in element.Attributes())
             {
                 if (attribute.Name == "session")
                 {
@@ -99,93 +97,41 @@ namespace Tomawo.Code
 
         internal static void UpdateTime(double time)
         {
-            XDocument document = XDocument.Load("Xml/Settings.xml");
-            IEnumerable<XElement> elements = document.Element("Timer").Descendants();
+            XDocument document = CurrentStateSession();
+            XElement element = document.Element("Tomawo")
+                .Element("Timer");
 
-            foreach (XElement element in elements.Where(element => element.Name == "Current"))
-            {
-                element.SetAttributeValue("profile", "user");
-            }
-
-            foreach (XElement projectElement in from element in elements
-                                                where element.Name == "Profiles"
-                                                from profileElement in element.Elements()
-                                                where profileElement.FirstAttribute.Value == "user"
-                                                from projectElement in profileElement.Elements()
-                                                where projectElement.FirstAttribute.Value == "default"
-                                                select projectElement)
-            {
-                projectElement.SetAttributeValue("session", time.ToString("##."));
-            }
+            element.SetAttributeValue("session", time.ToString("##."));
 
             document.Save("Xml/Settings.xml");
         }
         internal static void UpdateBreak(double breakTime)
         {
-            XDocument document = XDocument.Load("Xml/Settings.xml");
-            IEnumerable<XElement> elements = document.Element("Timer").Descendants();
+            XDocument document = CurrentStateSession();
+            XElement element = document.Element("Tomawo")
+                .Element("Timer");
 
-            foreach (XElement element in elements.Where(element => element.Name == "Current"))
-            {
-                element.SetAttributeValue("profile", "user");
-            }
-
-            foreach (XElement projectElement in from element in elements
-                                                where element.Name == "Profiles"
-                                                from profileElement in element.Elements()
-                                                where profileElement.FirstAttribute.Value == "user"
-                                                from projectElement in profileElement.Elements()
-                                                where projectElement.FirstAttribute.Value == "default"
-                                                select projectElement)
-            {
-                projectElement.SetAttributeValue("break", breakTime.ToString("##."));
-            }
+            element.SetAttributeValue("break", breakTime.ToString("##."));
 
             document.Save("Xml/Settings.xml");
         }
         internal static void UpdateLongBreak(double longBreak)
         {
-            XDocument document = XDocument.Load("Xml/Settings.xml");
-            IEnumerable<XElement> elements = document.Element("Timer").Descendants();
+            XDocument document = CurrentStateSession();
+            XElement element = document.Element("Tomawo")
+                .Element("Timer");
 
-            foreach (XElement element in elements.Where(element => element.Name == "Current"))
-            {
-                element.SetAttributeValue("profile", "user");
-            }
-
-            foreach (XElement projectElement in from element in elements
-                                                where element.Name == "Profiles"
-                                                from profileElement in element.Elements()
-                                                where profileElement.FirstAttribute.Value == "user"
-                                                from projectElement in profileElement.Elements()
-                                                where projectElement.FirstAttribute.Value == "default"
-                                                select projectElement)
-            {
-                projectElement.SetAttributeValue("longBreak", longBreak.ToString("##."));
-            }
+            element.SetAttributeValue("longBreak", longBreak.ToString("##."));
 
             document.Save("Xml/Settings.xml");
         }
         internal static void UpdateSessionsCount(double count)
         {
-            XDocument document = XDocument.Load("Xml/Settings.xml");
-            IEnumerable<XElement> elements = document.Element("Timer").Descendants();
+            XDocument document = CurrentStateSession();
+            XElement element = document.Element("Tomawo")
+                .Element("Timer");
 
-            foreach (XElement element in elements.Where(element => element.Name == "Current"))
-            {
-                element.SetAttributeValue("profile", "user");
-            }
-
-            foreach (XElement projectElement in from element in elements
-                                                where element.Name == "Profiles"
-                                                from profileElement in element.Elements()
-                                                where profileElement.FirstAttribute.Value == "user"
-                                                from projectElement in profileElement.Elements()
-                                                where projectElement.FirstAttribute.Value == "default"
-                                                select projectElement)
-            {
-                projectElement.SetAttributeValue("sessionCont", count.ToString("##."));
-            }
+            element.SetAttributeValue("sessionCont", count.ToString("##."));
 
             document.Save("Xml/Settings.xml");
         }
@@ -193,24 +139,11 @@ namespace Tomawo.Code
         {
             string _quiet = quiet ? "1" : "0";
 
-            XDocument document = XDocument.Load("Xml/Settings.xml");
-            IEnumerable<XElement> elements = document.Element("Timer").Descendants();
+            XDocument document = CurrentStateSession();
+            XElement element = document.Element("Tomawo")
+                .Element("Timer");
 
-            foreach (XElement element in elements.Where(element => element.Name == "Current"))
-            {
-                element.SetAttributeValue("profile", "user");
-            }
-
-            foreach (XElement projectElement in from element in elements
-                                                where element.Name == "Profiles"
-                                                from profileElement in element.Elements()
-                                                where profileElement.FirstAttribute.Value == "user"
-                                                from projectElement in profileElement.Elements()
-                                                where projectElement.FirstAttribute.Value == "default"
-                                                select projectElement)
-            {
-                projectElement.SetAttributeValue("quiet", _quiet);
-            }
+            element.SetAttributeValue("quiet", _quiet);
 
             document.Save("Xml/Settings.xml");
         }
